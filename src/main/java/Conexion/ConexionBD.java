@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author sonic
+ * @author sonic XDDD
  */
 public class ConexionBD implements IConexionBD {
 
