@@ -6,7 +6,7 @@ package BO;
 
 /**
  *
- * @author sonic XDDD
+ * @author sonic XDDDDDD
  */
 public class PacienteBO {
     
