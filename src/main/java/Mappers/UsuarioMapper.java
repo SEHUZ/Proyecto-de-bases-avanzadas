@@ -4,10 +4,37 @@
  */
 package Mappers;
 
+import DTO.UsuarioDTO;
+import Entidades.Usuario;
+
 /**
  *
  * @author sonic
  */
 public class UsuarioMapper {
-    
+    // Convertir de Entidad a DTO (Cliente → ClienteDTO)
+        public static UsuarioDTO toDTO(Usuario usuario) {
+            if (usuario == null) {
+                return null;
+            }
+            return new UsuarioDTO(
+                    usuario.getIdUsuario(),
+                    usuario.getCorreoElectronico(),
+                    usuario.getContrasenia(),
+                    usuario.getRol()
+            );
+        }
+
+        // Convertir de DTO a Entidad (ClienteDTO → Cliente)
+        public static Usuario toEntity(UsuarioDTO usuarioDTO) {
+            if (usuarioDTO == null) {
+                return null;
+            }
+            return new Usuario(
+                    usuarioDTO.getIdUsuario(),
+                    usuarioDTO.getCorreoElectronico(),
+                    usuarioDTO.getContrasenia(),
+                    usuarioDTO.getRol()
+            );
+        }
 }
