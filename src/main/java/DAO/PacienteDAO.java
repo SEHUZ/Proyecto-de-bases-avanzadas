@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author Jose
  */
-public class PacienteDAO {
+public class PacienteDAO implements IPacienteDAO {
 
     IConexionBD conexion;
 
