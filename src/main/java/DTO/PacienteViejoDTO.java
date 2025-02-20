@@ -12,8 +12,8 @@ import java.time.LocalDate;
  */
 public class PacienteViejoDTO {
     
-    private int idPaciente;
-    private int idUsuario;
+    private String idPaciente;
+    private String idUsuario;
     private String nombres;
     private String apellidoPaterno;
     private String apellidoMaterno;
@@ -23,7 +23,7 @@ public class PacienteViejoDTO {
     public PacienteViejoDTO() {
     }
 
-    public PacienteViejoDTO(int idPaciente, int idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
+    public PacienteViejoDTO(String idPaciente, String idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
         this.idPaciente = idPaciente;
         this.idUsuario = idUsuario;
         this.nombres = nombres;
@@ -33,7 +33,7 @@ public class PacienteViejoDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public PacienteViejoDTO(int idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
+    public PacienteViejoDTO(String idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
@@ -42,19 +42,19 @@ public class PacienteViejoDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getIdPaciente() {
+    public String getIdPaciente() {
         return idPaciente;
     }
 
-    public void setIdPaciente(int idPaciente) {
+    public void setIdPaciente(String idPaciente) {
         this.idPaciente = idPaciente;
     }
 
-    public int getIdUsuario() {
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
