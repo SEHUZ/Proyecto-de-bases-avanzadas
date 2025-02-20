@@ -4,10 +4,14 @@
  */
 package DAO;
 
+import Entidades.Paciente;
+import Exception.PersistenciaClinicaException;
+
 /**
  *
  * @author sonic
  */
 public interface IPacienteDAO {
     
+    public Paciente registrarPaciente(Paciente paciente) throws PersistenciaClinicaException;
 }
