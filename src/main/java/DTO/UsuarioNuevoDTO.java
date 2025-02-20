@@ -8,13 +8,13 @@ package DTO;
  *
  * @author sonic
  */
-public class UsuarioDTO {
+public class UsuarioNuevoDTO {
     private int idUsuario;
     private String correoElectronico;
     private String contrasenia;
     private String rol;
-
-    public UsuarioDTO(int idUsuario, String correoElectronico, String contrasenia, String rol) {
+    
+    public UsuarioNuevoDTO(int idUsuario, String correoElectronico, String contrasenia, String rol) {
         this.idUsuario = idUsuario;
         this.correoElectronico = correoElectronico;
         this.contrasenia = contrasenia;
@@ -41,6 +41,4 @@ public class UsuarioDTO {
     public String toString() {
         return "UsuarioDTO{" + "idUsuario=" + idUsuario + ", correoElectronico=" + correoElectronico + ", contrasenia=" + contrasenia + ", rol=" + rol + '}';
     }
-    
-    
 }

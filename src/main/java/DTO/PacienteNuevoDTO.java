@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * @author Daniel M
  */
 public class PacienteNuevoDTO {
-    private String idUsuario;
+    private int idUsuario;
     private String nombres;
     private String apellidoPaterno;
     private String apellidoMaterno;
@@ -21,7 +21,7 @@ public class PacienteNuevoDTO {
     public PacienteNuevoDTO() {
     }
 
-    public PacienteNuevoDTO(String idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
+    public PacienteNuevoDTO(int idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
         this.idUsuario = idUsuario;
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
@@ -30,11 +30,11 @@ public class PacienteNuevoDTO {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getIdUsuario() {
+    public int getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(String idUsuario) {
+    public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
 

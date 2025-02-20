@@ -6,7 +6,9 @@ package BO;
 
 import Conexion.IConexionBD;
 import DAO.UsuarioDAO;
-import DTO.UsuarioDTO;
+import DTO.DireccionNuevoDTO;
+import DTO.PacienteNuevoDTO;
+import DTO.UsuarioNuevoDTO;
 import Exception.NegocioException;
 import Exception.PersistenciaClinicaException;
 import Mappers.UsuarioMapper;
@@ -21,7 +23,7 @@ public class UsuarioBO {
     public UsuarioBO(IConexionBD conexionBD) {
         this.usuarioDAO = new UsuarioDAO(conexionBD);
     }
-    public void registrarUsuario(UsuarioDTO usuarioDTO) throws NegocioException, PersistenciaClinicaException {
+    public void registrarUsuario(UsuarioNuevoDTO usuarioDTO, PacienteNuevoDTO pacientenuevoDTO, DireccionNuevoDTO direccionnuevoDTO) throws NegocioException, PersistenciaClinicaException {
         if (usuarioDAO.consultarUsuarioPorCorreo(usuarioDTO.getCorreoElectronico()) != null) {
             throw new PersistenciaClinicaException("El correo ya está registrado.");
         }
@@ -34,6 +36,10 @@ public class UsuarioBO {
         if (usuarioDTO.getRol() == null || (!usuarioDTO.getRol().equalsIgnoreCase("médico") && !usuarioDTO.getRol().equalsIgnoreCase("paciente"))) {
             throw new PersistenciaClinicaException("Solo se puede elegir el rol de medico o usuario y es obligatorio");
         }
+        if (pacientenuevoDTO.getApellidoPaterno() == null || pacientenuevoDTO.getApellidoPaterno().isEmpty()){
+            throw new PersistenciaClinicaException("Se necesita un apellido paterno obligatoriamente");
+        }
+        
         try {
             usuarioDAO.registrarUsuario(UsuarioMapper.toEntity(usuarioDTO));
         
