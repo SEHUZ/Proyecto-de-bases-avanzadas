@@ -14,4 +14,6 @@ import Exception.PersistenciaClinicaException;
 public interface IPacienteDAO {
     
     public Paciente registrarPaciente(Paciente paciente) throws PersistenciaClinicaException;
+    
+    public Paciente consultarPacientePorID(int id) throws PersistenciaClinicaException;
 }
