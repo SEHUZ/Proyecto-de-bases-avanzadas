@@ -15,7 +15,7 @@ import Entidades.Paciente;
 public class PacienteMapper {
 
     // Convertir PacienteNuevoDTO a entidad Paciente
-    public Paciente toEntity(PacienteNuevoDTO pacienteNuevo) {
+    public static Paciente toEntity(PacienteNuevoDTO pacienteNuevo) {
         if (pacienteNuevo == null) {
             return null;
         }

@@ -11,45 +11,43 @@ import java.time.LocalDate;
  * @author sonic
  */
 public class DireccionNuevoDTO {
-    private String idUsuario;
-    private String nombres;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
-    private String telefono;
-    private LocalDate fechaNacimiento;
+    private int idDireccion;
+    private int idPaciente;
+    private String calle;
+    private String numero;
+    private String cp;
 
-    public DireccionNuevoDTO(String idUsuario, String nombres, String apellidoPaterno, String apellidoMaterno, String telefono, LocalDate fechaNacimiento) {
-        this.idUsuario = idUsuario;
-        this.nombres = nombres;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
-        this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
+    public DireccionNuevoDTO(int idDireccion, int idPaciente, String calle, String numero, String cp) {
+        this.idDireccion = idDireccion;
+        this.idPaciente = idPaciente;
+        this.calle = calle;
+        this.numero = numero;
+        this.cp = cp;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
+    public int getIdDireccion() {
+        return idDireccion;
     }
 
-    public String getNombres() {
-        return nombres;
+    public int getIdPaciente() {
+        return idPaciente;
     }
 
-    public String getApellidoPaterno() {
-        return apellidoPaterno;
+    public String getCalle() {
+        return calle;
     }
 
-    public String getApellidoMaterno() {
-        return apellidoMaterno;
+    public String getNumero() {
+        return numero;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getCp() {
+        return cp;
     }
+    
+    
 
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+    
     
     
 }
