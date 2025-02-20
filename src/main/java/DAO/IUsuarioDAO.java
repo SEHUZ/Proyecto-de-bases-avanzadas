@@ -4,10 +4,17 @@
  */
 package DAO;
 
+import Entidades.Usuario;
+import Exception.PersistenciaClinicaException;
+import java.util.List;
+
 /**
  *
  * @author sonic
  */
 public interface IUsuarioDAO {
+    public boolean registrarUsuario(Usuario usuario) throws PersistenciaClinicaException;
+    
+    public Usuario consultarUsuarioPorID(int idUsuario) throws PersistenciaClinicaException;
     
 }
