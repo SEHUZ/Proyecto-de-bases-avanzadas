@@ -18,16 +18,15 @@ import java.util.logging.Logger;
  *
  * @author sonic
  */
-public class DireccionesPacientesDAO {
-    public class DireccionPacienteDAO implements IDireccionesPacientesDAO {
+public class DireccionesPacientesDAO implements IDireccionesPacientesDAO{
 
     IConexionBD conexion;
 
-    public DireccionPacienteDAO(IConexionBD conexion) {
+    public DireccionesPacientesDAO(IConexionBD conexion) {
         this.conexion = conexion;
     }
 
-    private static final Logger logger = Logger.getLogger(DireccionPacienteDAO.class.getName());
+    private static final Logger logger = Logger.getLogger(DireccionesPacientesDAO.class.getName());
 
     public boolean agregarDireccion(DireccionPaciente direccion) throws PersistenciaClinicaException, SQLException {
         String sentenciaSQL = "INSERT INTO DireccionesPacientes (idPaciente, Calle, Numero, CP) VALUES (?,?,?,?)";
@@ -105,6 +104,4 @@ public class DireccionesPacientesDAO {
             throw new PersistenciaClinicaException("Error al actualizar la dirección", e);
         }
     }
-    }
-
 }

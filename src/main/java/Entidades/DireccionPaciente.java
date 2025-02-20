@@ -34,6 +34,11 @@ public class DireccionPaciente {
         this.cp = cp;
     }
 
+    public DireccionPaciente() {
+    }
+    
+    
+
     // Getters y setters
     public int getIdDireccion() {
         return idDireccion;
