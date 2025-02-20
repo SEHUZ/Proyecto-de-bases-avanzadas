@@ -144,4 +144,27 @@ INSERT INTO Consultas (Diagnostico, Estado, FechaHora, Tratamiento, idCita)
 VALUES ("Hipertensión", "En progreso", "2025-02-20 11:00:00", "Recomendación de dieta baja en sal", 2);
 
 
+-- Inicia la transacción
+START TRANSACTION;
+
+-- 1. Inserta el usuario con rol 'paciente'
+INSERT INTO Usuarios (correoElectronico, contrasenia, rol)
+VALUES ('nuevo_paciente@ejemplo.com', 'clave123', 'paciente');
+
+-- Guarda el id generado para el usuario
+SET @idUsuario = LAST_INSERT_ID();
+
+-- 2. Inserta los datos del paciente usando el id del usuario
+INSERT INTO Pacientes (idUsuario, nombres, apellidoPaterno, apellidoMaterno, fechaNacimiento, telefono)
+VALUES (@idUsuario, 'NombrePaciente', 'ApellidoPaterno', 'ApellidoMaterno', 'YYYY-MM-DD', '1234567890');
+
+-- Guarda el id generado para el paciente
+SET @idPaciente = LAST_INSERT_ID();
+
+-- 3. Inserta la dirección del paciente
+INSERT INTO DireccionesPacientes (idPaciente, Calle, Numero, CP)
+VALUES (@idPaciente, 'Calle de Ejemplo', '123', 'CP12345');
+
+-- Si todo se ejecutó correctamente, se confirma la transacción
+COMMIT;
 
