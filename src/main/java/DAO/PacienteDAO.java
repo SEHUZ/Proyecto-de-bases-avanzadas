@@ -4,12 +4,21 @@
  */
 package DAO;
 
+import Conexion.IConexionBD;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Jose
  */
 public class PacienteDAO {
-    //prueba git cambios
-    
-    //Hola joseson commit loco AY MAMA
+
+    IConexionBD conexion;
+
+    public PacienteDAO(IConexionBD conexion) {
+        this.conexion = conexion;
+    }
+
+    private static final Logger logger = Logger.getLogger(PacienteDAO.class.getName());
+
 }
