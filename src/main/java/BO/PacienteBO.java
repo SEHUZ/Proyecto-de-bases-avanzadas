@@ -5,15 +5,19 @@
 package BO;
 
 import Conexion.IConexionBD;
+import DAO.IPacienteDAO;
+import DAO.PacienteDAO;
 
 /**
  *
  * @author sonic XDDDDDD
  */
 public class PacienteBO {
+
+    private final IPacienteDAO pacienteDAO;
     
     public PacienteBO(IConexionBD conexion) {
-        this.pacienteDAO = new PacienteBO(conexion);
-    }    
+        this.pacienteDAO = new PacienteDAO(conexion);
+    }
     
 }
