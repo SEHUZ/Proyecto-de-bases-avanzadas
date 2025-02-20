@@ -17,4 +17,6 @@ public interface IUsuarioDAO {
     
     public Usuario consultarUsuarioPorID(int idUsuario) throws PersistenciaClinicaException;
     
+    public Usuario consultarUsuarioPorCorreo (String correoElectronico) throws PersistenciaClinicaException;
+    
 }

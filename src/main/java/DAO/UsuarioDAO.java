@@ -82,7 +82,32 @@ public class UsuarioDAO implements IUsuarioDAO{
                 }
             }
         } catch (SQLException e) {
-            throw new PersistenciaClinicaException("Error al obtener cliente por ID", e);
+            throw new PersistenciaClinicaException("Error al obtener al usuario por ID: Id inexistente", e);
+        }
+        return usuario;
+    }
+    
+    @Override 
+    public Usuario consultarUsuarioPorCorreo(String correoElectronico) throws PersistenciaClinicaException {
+        String consultaSQL = "SELECT idUsuario, correoElectronico, contrasenia, rol FROM usuarios WHERE correoElectronico = ?";
+        
+        Usuario usuario = null;
+        try (Connection con = conexion.crearConexion();
+                PreparedStatement ps = con.prepareStatement (consultaSQL, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, correoElectronico);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    usuario = new Usuario(
+                            rs.getInt("idUsuario"),
+                            rs.getString("correoElectronico"),
+                            rs.getString("contrasenia"),
+                            rs.getString("rol")
+                    );
+                }
+                
+            }
+        }catch (SQLException e){
+            throw new PersistenciaClinicaException ("Error al obtener el usuario: Correo inexistente", e);
         }
         return usuario;
     }
