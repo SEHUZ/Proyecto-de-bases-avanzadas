@@ -4,10 +4,16 @@
  */
 package BO;
 
+import Conexion.IConexionBD;
+
 /**
  *
  * @author sonic XDDDDDD
  */
 public class PacienteBO {
+    
+    public PacienteBO(IConexionBD conexion) {
+        this.pacienteDAO = new PacienteBO(conexion);
+    }    
     
 }
